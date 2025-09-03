@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container input {
+    font-size: 18px;
+    width: 0;
+    transition: 0.8s;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.container:hover input {
+    width: 300px;
+}
+
+.container a i {
+    font-size: 20px;
+    color: mediumvioletred;
+}
