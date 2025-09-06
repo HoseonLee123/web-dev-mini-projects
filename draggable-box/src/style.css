@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: dimgray;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: blueviolet;
+}
+
+.container.active {
+    cursor: move;
+}
+
+.container i {
+    font-size: 40px;
+    color: white;
+    background-color: blueviolet;
+}
