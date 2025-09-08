@@ -22,7 +22,6 @@ function initSortableList(event) {
         return event.clientY < rect.top + rect.height / 2;
     });
 
-    console.log(nextSibling);
     const draggingItem = sortableList.querySelector(".dragging");
 
     if (draggingItem === null) return;
