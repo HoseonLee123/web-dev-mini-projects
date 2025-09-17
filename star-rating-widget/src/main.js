@@ -3,7 +3,10 @@ import "./style.css";
 const starContainer = document.querySelector(".star-container");
 const stars = document.querySelectorAll(".star");
 const formContainer = document.querySelector(".form-container");
-const result = document.querySelector(".result");
+const faceContainer = document.querySelector(".face-container");
+const faces = document.querySelector(".faces");
+const faceAll = document.querySelectorAll(".face");
+const experience = document.querySelector(".experience");
 const post = document.querySelector(".post");
 const finishContainer = document.querySelector(".finish-container");
 const edit = document.querySelector(".edit");
@@ -49,23 +52,25 @@ stars.forEach((star) => {
 
         formContainer.style.display = "block";
 
+        const height = parseInt(window.getComputedStyle(faceContainer).height);
+
         switch (length) {
             case 1:
-                result.textContent = "😠";
+                faces.style.marginTop = "0px";
                 break;
             case 2:
-                result.textContent = "🙁";
-                break;
             case 3:
-                result.textContent = "😊";
-                break;
             case 4:
-                result.textContent = "😃";
-                break;
             case 5:
-                result.textContent = "😍";
+                faces.style.marginTop = `-${height * (length - 1)}px`;
                 break;
         }
+    });
+});
+
+faceAll.forEach((face) => {
+    face.addEventListener("click", () => {
+        experience.focus();
     });
 });
 
