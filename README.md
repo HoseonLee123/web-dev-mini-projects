@@ -1,1 +1,1 @@
-This is web development mini projects.
+These are web development mini-projects.
