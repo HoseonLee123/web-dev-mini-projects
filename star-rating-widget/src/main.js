@@ -12,34 +12,40 @@ const finishContainer = document.querySelector(".finish-container");
 const edit = document.querySelector(".edit");
 
 stars.forEach((star) => {
+    star.isClicked = false;
+
     const length = +star.getAttribute("id");
 
+    // To be gold temporarily
     star.addEventListener("mouseenter", () => {
         for (let i = 0; i < length; i++) {
             stars[i].style.color = "gold";
         }
     });
 
+    // To be gray temporarily
     star.addEventListener("mouseleave", () => {
         for (let i = 0; i < length; i++) {
-            if (stars[i].getAttribute("data-is-clicked") === "false") {
+            if (stars[i].isClicked === false) {
                 stars[i].style.color = "gray";
             }
         }
     });
 
     star.addEventListener("click", () => {
+        // To be gold
         for (let i = 0; i < stars.length; i++) {
             if (i < length) {
-                stars[i].setAttribute("data-is-clicked", "true");
+                stars[i].isClicked = true;
                 stars[i].style.color = "gold";
             } else {
-                stars[i].setAttribute("data-is-clicked", "false");
+                stars[i].isClicked = false;
                 stars[i].style.color = "gray";
                 stars[i].style.textShadow = "none";
             }
         }
 
+        // To shine the full stars
         if (length === stars.length) {
             for (let i = 0; i < stars.length; i++) {
                 stars[i].style.textShadow = "0 0 10px gold";
@@ -50,8 +56,7 @@ stars.forEach((star) => {
             }
         }
 
-        formContainer.style.display = "block";
-
+        // To slide the faces
         const height = parseInt(window.getComputedStyle(faceContainer).height);
 
         switch (length) {
@@ -65,6 +70,9 @@ stars.forEach((star) => {
                 faces.style.marginTop = `-${height * (length - 1)}px`;
                 break;
         }
+
+        // To show the form
+        formContainer.style.display = "block";
     });
 });
 
