@@ -41,7 +41,6 @@ stars.forEach((star) => {
             } else {
                 stars[i].isClicked = false;
                 stars[i].style.color = "gray";
-                stars[i].style.textShadow = "none";
             }
         }
 
