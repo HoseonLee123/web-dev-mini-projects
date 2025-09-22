@@ -1,0 +1,132 @@
+:root {
+    --gap: 20px;
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightblue;
+    height: 2000px;
+}
+
+.show-modal {
+    display: block;
+    margin: 300px auto;
+    outline: none;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: violet;
+    padding: var(--gap);
+    font-size: 3rem;
+    color: black;
+    cursor: pointer;
+}
+
+.show-modal:hover {
+    background-color: darkviolet;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.container .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+.container .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background-color: white;
+    padding: var(--gap);
+    width: 90%;
+    max-width: 1100px;
+    height: 50vh;
+    max-height: 100vh;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(100%);
+}
+
+.container.show .content {
+    transform: translateY(0);
+}
+
+.container.dragging .content {
+    transition: none;
+}
+
+.container.fullscreen .content {
+    border-radius: 0;
+}
+
+.container .content header {
+    display: flex;
+    justify-content: center;
+}
+
+.container .content header .drag-space {
+    display: flex;
+    align-items: center;
+    width: calc(var(--gap) * 2);
+    height: var(--gap);
+    cursor: grabbing;
+}
+
+.container .content header .drag-space .drag-icon {
+    display: block;
+    border-radius: var(--border-radius);
+    background-color: gray;
+    width: 100%;
+    height: 25%;
+}
+
+.container .content main {
+    overflow-y: auto;
+}
+
+.container .content main h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.container .content main p {
+    font-size: 1.5rem;
+}
+
+.container .content main p:not(:last-child) {
+    margin: var(--gap) 0;
+}
+
+.container .content main p + p {
+    text-indent: 2em;
+}
