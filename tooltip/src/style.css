@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dimgray;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+}
+
+.tooltip-container {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    border-radius: 30px;
+    background-color: white;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.3s cubic-bezier(0.63, 0.09, 0.17, 1.63);
+    transform: rotate(25deg);
+}
+
+.container:hover .tooltip-container {
+    top: -70px;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.tooltip-container .text {
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+}
+
+.tooltip-container .triangle {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    border: 10px solid transparent;
+    border-top-color: white;
+    transform: translateX(-50%);
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    font-size: 100px;
+    color: red;
+    cursor: pointer;
+}
