@@ -1,0 +1,79 @@
+:root {
+    --gap: 20px;
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dimgray;
+    height: 100vh;
+}
+
+.show-modal {
+    border-radius: var(--border-radius);
+    background-color: lightsalmon;
+    padding: var(--gap);
+    font-weight: bold;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.show-modal:hover {
+    background-color: hotpink;
+    color: white;
+}
+
+.modal-container {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius);
+    background-color: white;
+    width: 500px;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal-container.display {
+    display: block;
+}
+
+.modal-container.opacity {
+    opacity: 1;
+}
+
+.modal-container .top-content {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background-color: lightseagreen;
+    padding: var(--gap);
+    font-size: 30px;
+    text-align: center;
+}
+
+.modal-container .top-content .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modal-container .top-content .close:hover {
+    color: silver;
+}
+
+.modal-container .bottom-content {
+    padding: var(--gap);
+    font-size: 30px;
+}
