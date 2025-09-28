@@ -1,0 +1,114 @@
+/*Light Mode*/
+:root {
+    --gap: 20px;
+    --color: black;
+    --background-color: lightgray;
+    --opacity-dark-icon: 0;
+    --opacity-light-icon: 1;
+    --transform-dark-icon: scale(0);
+    --transform-light-icon: scale(1);
+    --clip-path: circle(0% at 97% 7%);
+}
+
+/*Dark Mode*/
+.dark-mode {
+    --color: white;
+    --background-color: dimgray;
+    --opacity-dark-icon: 1;
+    --opacity-light-icon: 0;
+    --transform-dark-icon: scale(1);
+    --transform-light-icon: scale(0);
+    --clip-path: circle(140% at 97% 7%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    min-height: 100vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--gap) * 2);
+    width: 700px;
+    color: var(--color);
+}
+
+section h1 {
+    font-size: 4rem;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+section .mode-toggle-1 {
+    border: none;
+    border-radius: var(--gap);
+    background-color: darkviolet;
+    padding: var(--gap);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+section .mode-toggle-1:hover {
+    background-color: rgba(148, 0, 211, 0.8);
+}
+
+.mode-toggle-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: var(--gap);
+    right: var(--gap);
+    border: none;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.mode-toggle-2 .dark-icon,
+.mode-toggle-2 .light-icon {
+    display: block;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    font-size: 4rem;
+    color: var(--color);
+}
+
+.mode-toggle-2 .dark-icon {
+    opacity: var(--opacity-dark-icon);
+    transform: var(--transform-dark-icon);
+}
+
+.mode-toggle-2 .light-icon {
+    opacity: var(--opacity-light-icon);
+    transform: var(--transform-light-icon);
+}
+
+.animated-background {
+    position: absolute;
+    z-index: -1;
+    background-color: #1f1f1f;
+    clip-path: var(--clip-path);
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease-in-out;
+}
