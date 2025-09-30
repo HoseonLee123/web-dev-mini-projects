@@ -1,0 +1,52 @@
+.spring .nav {
+    width: var(--width-nav-spring);
+}
+
+.spring .nav .first-nav ul li {
+    flex-direction: column;
+}
+
+.spring .nav .first-nav ul li .text {
+    font-size: var(--font-size-small);
+}
+
+.spring .nav .second-nav header .text,
+.spring .nav .third-nav header .text {
+    display: none;
+}
+
+.spring .nav .second-nav header .icon,
+.spring .nav .third-nav header .icon {
+    display: block;
+    margin-bottom: var(--space);
+    text-align: center;
+}
+
+.spring .nav .second-nav header .icon:hover {
+    font-variation-settings: "FILL" 1;
+    color: red;
+}
+
+.spring .nav .third-nav header .icon:hover {
+    color: yellow;
+}
+
+.spring .nav .second-nav main ul li,
+.spring .nav .third-nav main ul li {
+    justify-content: center;
+}
+
+.spring .nav .second-nav main ul li span:nth-child(2),
+.spring .nav .third-nav main ul li span:nth-child(2) {
+    display: none;
+}
+
+.spring .nav .second-nav main ul.show .after-more,
+.spring .nav .third-nav main ul.show .after-more {
+    display: none;
+}
+
+.spring .nav .second-nav main ul .more,
+.spring .nav .third-nav main ul .more {
+    display: none;
+}

@@ -1,0 +1,80 @@
+@import "./3-aside-spring.css";
+@import "./3-aside-show.css";
+
+.division {
+    margin: var(--space) 0;
+    border: 1px solid var(--hover-color-1);
+}
+
+.nav {
+    position: fixed;
+    top: var(--height-header);
+    left: 0;
+    padding: var(--space);
+    width: var(--width-nav);
+    height: calc(100vh - var(--height-header));
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overscroll-behavior-y: none;
+}
+
+.nav .first-nav ul li {
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+    border-radius: var(--border-radius);
+    padding: var(--space);
+    cursor: pointer;
+}
+
+.nav .first-nav ul li:hover {
+    background-color: var(--hover-color-2);
+}
+
+.nav .first-nav ul li .text {
+    font-size: var(--font-size-medium);
+}
+
+.nav .second-nav header .text,
+.nav .third-nav header .text {
+    padding: 0 var(--space);
+    font-size: var(--font-size-big);
+}
+
+.nav .second-nav header .icon,
+.nav .third-nav header .icon {
+    display: none;
+}
+
+.nav .second-nav main ul li,
+.nav .third-nav main ul li {
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+    border-radius: var(--border-radius);
+    padding: var(--space);
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+}
+
+.nav .second-nav main ul li:not(.more):hover,
+.nav .third-nav main ul li:not(.more):hover {
+    background-color: var(--hover-color-1);
+}
+
+.nav .second-nav main ul .after-more,
+.nav .third-nav main ul .after-more {
+    display: none;
+}
+
+.nav .second-nav main ul .more,
+.nav .third-nav main ul .more {
+    display: flex;
+    align-items: center;
+    gap: var(--space);
+}
+
+.nav .second-nav main ul .more span:nth-child(3),
+.nav .third-nav main ul .more span:nth-child(3) {
+    display: none;
+}

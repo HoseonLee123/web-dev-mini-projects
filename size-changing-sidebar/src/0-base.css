@@ -1,0 +1,40 @@
+:root {
+    --space: 10px;
+    --border-radius: 10px;
+    --hover-color-1: rgba(211, 211, 211, 0.2);
+    --hover-color-2: #083440;
+
+    --font-size-big: 30px;
+    --font-size-medium: 25px;
+    --font-size-small: 15px;
+
+    --height-header: 70px;
+    --z-index-header: 1;
+
+    --repeat-streamers: 5;
+    --repeat-streamers-spring: 6;
+
+    --width-nav: 250px;
+    --width-nav-spring: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    height: 2000px;
+    color: lightgray;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.material-symbols-outlined {
+    font-size: var(--font-size-big);
+    cursor: pointer;
+}

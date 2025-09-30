@@ -1,0 +1,8 @@
+.spring .content {
+    left: var(--width-nav-spring);
+    width: calc(100% - var(--width-nav-spring));
+}
+
+.spring .content .streamer-section .streamers {
+    grid-template-columns: repeat(var(--repeat-streamers-spring), 1fr);
+}

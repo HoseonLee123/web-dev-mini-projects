@@ -1,0 +1,19 @@
+.nav .second-nav main ul.show .after-more,
+.nav .third-nav main ul.show .after-more {
+    display: block;
+}
+
+.nav .second-nav main ul.show .more .more-icon,
+.nav .third-nav main ul.show .more .more-icon {
+    transform: rotate(180deg);
+}
+
+.nav .second-nav main ul.show .more span:nth-child(2),
+.nav .third-nav main ul.show .more span:nth-child(2) {
+    display: none;
+}
+
+.nav .second-nav main ul.show .more span:nth-child(3),
+.nav .third-nav main ul.show .more span:nth-child(3) {
+    display: block;
+}
