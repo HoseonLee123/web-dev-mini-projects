@@ -2,28 +2,24 @@ import "./style.css";
 
 const container = document.querySelector(".container");
 
-container.addEventListener("mousedown", handleMouseDown);
+container.addEventListener("mousedown", (event) => {
+    const shiftX = event.clientX - container.getBoundingClientRect().left;
+    const shiftY = event.clientY - container.getBoundingClientRect().top;
 
-container.addEventListener("mouseup", handleClear);
+    function moveAt(event) {
+        container.style.left = event.clientX - shiftX + "px";
+        container.style.top = event.clientY - shiftY + "px";
+    }
 
-container.addEventListener("mouseleave", handleClear);
+    function handleMouseMove(event) {
+        moveAt(event);
+    }
 
-function handleMouseDown() {
     container.classList.add("active");
+    document.addEventListener("mousemove", handleMouseMove);
 
-    container.addEventListener("mousemove", handleMouseMove);
-}
-
-function handleClear() {
-    container.classList.remove("active");
-
-    container.removeEventListener("mousemove", handleMouseMove);
-}
-
-function handleMouseMove({ movementX, movementY }) {
-    const style = window.getComputedStyle(container);
-    const { left, top } = style;
-
-    container.style.left = `${parseInt(left) + movementX}px`;
-    container.style.top = `${parseInt(top) + movementY}px`;
-}
+    container.addEventListener("mouseup", () => {
+        container.classList.remove("active");
+        document.removeEventListener("mousemove", handleMouseMove);
+    });
+});
