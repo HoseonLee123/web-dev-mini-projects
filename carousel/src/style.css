@@ -1,0 +1,138 @@
+:root {
+    --space: 20px;
+    --border-radius: 10px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: dimgray;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    user-select: none;
+}
+
+.container .carousel {
+    display: flex;
+    border-radius: var(--border-radius);
+    background-color: white;
+    width: 500px;
+    height: 300px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.container .carousel.dragging {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+}
+
+.container .carousel li {
+    flex: 0 0 100%;
+    list-style-type: none;
+    scroll-snap-align: center;
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+}
+
+.container button {
+    position: absolute;
+    top: 50%;
+    border: none;
+    border-radius: 50%;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: lightgray;
+}
+
+.container .left {
+    left: -25px;
+}
+
+.container .right {
+    right: -25px;
+}
+
+.container .number-status {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: var(--border-radius);
+    background-color: white;
+    padding: calc(var(--space) / 2);
+}
+
+.container .circle-status {
+    display: flex;
+    gap: calc(var(--space) / 2);
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container .circle-status li {
+    list-style-type: none;
+    border-radius: 50%;
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.container .circle-status li:hover {
+    background-color: lightgray;
+}
+
+.container .circle-status li.active {
+    background-color: black;
+}
+
+.carousel-dummy {
+    display: none;
+}
+
+.li-1 {
+    background-color: #f46f6f;
+}
+
+.li-2 {
+    background-color: orange;
+}
+
+.li-3 {
+    background-color: #e4bf0a;
+}
+
+.li-4 {
+    background-color: #60bd60;
+}
+
+.li-5 {
+    background-color: #89abb6;
+}
+
+.li-6 {
+    background-color: #564ea3;
+}

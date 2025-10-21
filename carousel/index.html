@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Vite App</title>
+        <link href="/vite.svg" rel="icon" type="image/svg+xml" />
+    </head>
+    <body>
+        <div class="container">
+            <ul class="carousel">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+            <ul class="carousel-dummy" aria-hidden="true">
+                <li class="li-1">1</li>
+                <li class="li-2">2</li>
+                <li class="li-3">3</li>
+                <li class="li-4">4</li>
+                <li class="li-5">5</li>
+                <li class="li-6">6</li>
+            </ul>
+
+            <button class="left">&lt;</button>
+            <button class="right">&gt;</button>
+
+            <div class="number-status">
+                <span class="current-number">?</span>/<span class="total-number">??</span>
+            </div>
+
+            <ul class="circle-status">
+                <li data-circle-order="1" class="active"></li>
+                <li data-circle-order="2"></li>
+                <li data-circle-order="3"></li>
+                <li data-circle-order="4"></li>
+                <li data-circle-order="5"></li>
+                <li data-circle-order="6"></li>
+            </ul>
+        </div>
+
+        <script src="/src/main.js" type="module"></script>
+    </body>
+</html>
