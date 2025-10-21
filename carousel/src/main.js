@@ -42,14 +42,14 @@ carousel.addEventListener("scroll", () => {
 });
 
 // Scroll Automatically
+let needAutoScrolling = null;
+let intervalID = autoScrolling();
+
 function autoScrolling() {
     return setInterval(() => {
         carousel.scrollLeft += movingInterval;
     }, 2000);
 }
-
-let needAutoScrolling = null;
-let intervalID = autoScrolling();
 
 container.addEventListener("mouseenter", () => {
     clearInterval(intervalID);
@@ -177,6 +177,9 @@ right.addEventListener("click", () => {
 // Handle Circle Status Click
 circleStatus.querySelectorAll("li").forEach((targetLi) => {
     targetLi.addEventListener("click", () => {
+        // Prevent this event during snapping
+        if (carousel.scrollLeft % movingInterval !== 0) return;
+
         resetCarousel();
 
         carousel.scrollLeft +=
