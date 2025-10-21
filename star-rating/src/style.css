@@ -1,5 +1,5 @@
 :root {
-    --gap: 20px;
+    --space: 20px;
     --border-radius: 10px;
     --font-size: 20px;
 }
@@ -23,8 +23,9 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.7);
     border-radius: var(--border-radius);
     background-color: rgba(0, 0, 0, 0.7);
-    padding: var(--gap);
+    padding: var(--space);
     width: 350px;
+    user-select: none;
 }
 
 /*Star Container*/
@@ -32,7 +33,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: calc(var(--gap) / 2);
+    gap: calc(var(--space) / 2);
 }
 
 .star-container .star {
@@ -49,39 +50,32 @@ body {
 /*Form Container*/
 .form-container {
     display: none;
-}
-
-.form-container form {
-    display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: var(--space);
 }
 
-.form-container form .face-container {
-    height: 67px;
-    overflow: hidden;
-}
-
-.form-container form .face-container .faces {
+.form-container .faces {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: margin-top 0.5s;
+    height: 67px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
-.form-container form .face-container .faces .face {
+.form-container .faces .face {
     list-style: none;
     font-size: calc(var(--font-size) * 2.5);
     cursor: pointer;
 }
 
-.form-container form .experience {
-    position: relative;
+.form-container .experience {
     outline: none;
     border: none;
     border-radius: var(--border-radius);
     background-color: #494949;
-    padding: var(--gap);
+    padding: var(--space);
     height: 150px;
     overflow: auto;
     resize: none;
@@ -89,7 +83,7 @@ body {
     color: white;
 }
 
-.form-container form .post {
+.form-container .post {
     border: none;
     border-radius: var(--border-radius);
     background-color: goldenrod;
@@ -101,7 +95,7 @@ body {
     cursor: pointer;
 }
 
-.form-container form .post:hover {
+.form-container .post:hover {
     background-color: #f0c040;
 }
 
@@ -111,7 +105,7 @@ body {
 }
 
 .finish-container p {
-    padding: var(--gap) 0;
+    padding: var(--space) 0;
     font-size: calc(var(--font-size) * 2);
     color: white;
     text-align: center;

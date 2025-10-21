@@ -3,9 +3,7 @@ import "./style.css";
 const starContainer = document.querySelector(".star-container");
 const stars = document.querySelectorAll(".star");
 const formContainer = document.querySelector(".form-container");
-const faceContainer = document.querySelector(".face-container");
 const faces = document.querySelector(".faces");
-const faceAll = document.querySelectorAll(".face");
 const experience = document.querySelector(".experience");
 const post = document.querySelector(".post");
 const finishContainer = document.querySelector(".finish-container");
@@ -16,14 +14,14 @@ stars.forEach((star) => {
 
     const length = +star.getAttribute("id");
 
-    // To be gold temporarily
+    // Paint stars gold temporarily
     star.addEventListener("mouseenter", () => {
         for (let i = 0; i < length; i++) {
             stars[i].style.color = "gold";
         }
     });
 
-    // To be gray temporarily
+    // Paint stars gray temporarily
     star.addEventListener("mouseleave", () => {
         for (let i = 0; i < length; i++) {
             if (stars[i].isClicked === false) {
@@ -33,7 +31,7 @@ stars.forEach((star) => {
     });
 
     star.addEventListener("click", () => {
-        // To be gold
+        // Paint stars gold or gray
         for (let i = 0; i < stars.length; i++) {
             if (i < length) {
                 stars[i].isClicked = true;
@@ -44,7 +42,7 @@ stars.forEach((star) => {
             }
         }
 
-        // To shine the full stars
+        // Shine the full stars
         if (length === stars.length) {
             for (let i = 0; i < stars.length; i++) {
                 stars[i].style.textShadow = "0 0 10px gold";
@@ -55,31 +53,20 @@ stars.forEach((star) => {
             }
         }
 
-        // To slide the faces
-        const height = parseInt(window.getComputedStyle(faceContainer).height);
+        // Show the form container
+        formContainer.style.display = "flex";
 
-        switch (length) {
-            case 1:
-                faces.style.marginTop = "0px";
-                break;
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                faces.style.marginTop = `-${height * (length - 1)}px`;
-                break;
-        }
-
-        // To show the form
-        formContainer.style.display = "block";
+        // Slide the faces
+        const height = parseInt(window.getComputedStyle(faces).height);
+        faces.scrollTop = height * (length - 1);
     });
 });
 
-faceAll.forEach((face) => {
+for (const face of faces.children) {
     face.addEventListener("click", () => {
         experience.focus();
     });
-});
+}
 
 post.addEventListener("click", (e) => {
     e.preventDefault();
@@ -91,6 +78,6 @@ post.addEventListener("click", (e) => {
 
 edit.addEventListener("click", () => {
     starContainer.style.display = "block";
-    formContainer.style.display = "block";
+    formContainer.style.display = "flex";
     finishContainer.style.display = "none";
 });
