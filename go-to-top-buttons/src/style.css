@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -17,19 +18,26 @@ nav {
     text-align: center;
 }
 
-.top-button {
+.material-symbols-outlined {
     display: none;
     position: fixed;
-    right: 50px;
+    right: 200px;
     bottom: 50px;
+    outline: none;
+    border: none;
     border-radius: 50%;
     background-color: white;
     font-size: 100px;
-    color: coral;
+    color: blueviolet;
     cursor: pointer;
 }
 
-.top-button:hover {
+.button-2 {
+    right: 50px;
+    color: tomato;
+}
+
+.material-symbols-outlined:hover {
     box-shadow: 0 0 5px 5px white;
 }
 
