@@ -2,6 +2,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -18,12 +21,45 @@ nav {
     text-align: center;
 }
 
-.material-symbols-outlined {
-    display: none;
+section {
+    margin: 100px auto;
+    border-radius: 10px;
+    background-color: lightyellow;
+    padding: 20px;
+    width: 800px;
+}
+
+section > p {
+    font-size: 30px;
+}
+
+section > p > .first-button-span {
+    color: blueviolet;
+}
+
+section > p > .second-button-span {
+    color: tomato;
+}
+
+section p:first-child {
+    margin-bottom: 20px;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
     position: fixed;
-    right: 200px;
-    bottom: 50px;
-    outline: none;
+    right: -350px;
+    bottom: 10px;
+    transition: right 0.5s;
+}
+
+.show {
+    right: 10px;
+}
+
+ul .material-symbols-outlined {
     border: none;
     border-radius: 50%;
     background-color: white;
@@ -32,15 +68,10 @@ nav {
     cursor: pointer;
 }
 
-.button-2 {
-    right: 50px;
-    color: tomato;
-}
-
-.material-symbols-outlined:hover {
+ul .material-symbols-outlined:hover {
     box-shadow: 0 0 5px 5px white;
 }
 
-.show {
-    display: block;
+ul .second-button {
+    color: tomato;
 }

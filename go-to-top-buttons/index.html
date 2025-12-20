@@ -11,15 +11,29 @@
         />
     </head>
     <body>
-        <nav id="top">Top</nav>
+        <nav id="top">TOP</nav>
 
-        <a href="#top">
-            <button class="material-symbols-outlined button-1" title="href">arrow_circle_up</button>
-        </a>
+        <section>
+            <p>
+                <span class="first-button-span">The first button</span> uses the scroll and click
+                events.
+            </p>
+            <p>
+                <span class="second-button-span">The second button</span> uses the
+                <code>&lt;a&gt;</code> element and its href attribute.
+            </p>
+        </section>
 
-        <button class="material-symbols-outlined button-2" title="click event">
-            arrow_circle_up
-        </button>
+        <ul>
+            <li>
+                <button class="material-symbols-outlined first-button">arrow_circle_up</button>
+            </li>
+            <li>
+                <a href="#top">
+                    <button class="material-symbols-outlined second-button">arrow_circle_up</button>
+                </a>
+            </li>
+        </ul>
 
         <script src="/src/main.js" type="module"></script>
     </body>

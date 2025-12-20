@@ -1,21 +1,17 @@
 import "./style.css";
 
-const nav = document.querySelector("nav");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelector("ul");
+const firstButton = document.querySelector(".first-button");
 
 window.addEventListener("scroll", () => {
-    if (window.scrollY > nav.offsetHeight) {
-        buttons.forEach((button) => {
-            button.classList.add("show");
-        });
+    if (window.scrollY > 0) {
+        buttons.classList.add("show");
     } else {
-        buttons.forEach((button) => {
-            button.classList.remove("show");
-        });
+        buttons.classList.remove("show");
     }
 });
 
-buttons[1].addEventListener("click", () => {
+firstButton.addEventListener("click", () => {
     window.scrollTo({
         top: 0,
         behavior: "smooth",
