@@ -1,0 +1,18 @@
+.transition-display-toggle {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
+}
+
+.transition-content-visibility-toggle {
+    content-visibility: visible;
+    opacity: 1;
+}
+
+.transition-visibility-toggle {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Vite App</title>
+        <link href="/vite.svg" rel="icon" type="image/svg+xml" />
+    </head>
+    <body>
+        <div class="animation-container">
+            <div class="inner-container">
+                <button id="animation-display-btn">animation + display + opacity</button>
+                <p id="animation-display-para">
+                    The fade-in needs <code>display: block</code>.
+                    <br />
+                    <br />
+                    The fade-in needs <code>animation: forwards</code>.
+                    <br />
+                    <br />
+                    This height becomes 0 when <code>display: none</code>.
+                </p>
+            </div>
+
+            <div class="inner-container">
+                <button id="animation-content-visibility-btn">
+                    animation + content-visibility + opacity
+                </button>
+                <p id="animation-content-visibility-para">
+                    The fade-in needs <code>animation: forwards</code>.
+                    <br />
+                    <br />
+                    This height shrinks to the minimum paragraph height when
+                    <code>content-visibility: hidden</code>.
+                </p>
+            </div>
+
+            <div class="inner-container">
+                <button id="animation-visibility-btn">
+                    animation + content-visibility + opacity
+                </button>
+                <p id="animation-visibility-para">
+                    The fade-in needs <code>animation: forwards</code>.
+                    <br />
+                    <br />
+                    This height does not change.
+                </p>
+            </div>
+        </div>
+
+        <div class="transition-container">
+            <div class="inner-container">
+                <button id="transition-display-btn">transition + display + opacity</button>
+                <p id="transition-display-para">
+                    <code>display: none &rarr; display: block</code> needs the
+                    <code>@starting-style</code> at rule.
+                    <br />
+                    <br />
+                    <code>display:none &larr; display:block</code> needs
+                    <code>transition: display allow-discrete</code>.
+                    <br />
+                    <br />
+                    This height becomes 0 when <code>display: none</code>.
+                </p>
+            </div>
+
+            <div class="inner-container">
+                <button id="transition-content-visibility-btn">
+                    transition + content-visibility + opacity
+                </button>
+                <p id="transition-content-visibility-para">
+                    <code>content-visibility: hidden &larr; content-visibility: visible</code> needs
+                    <code>transition: content-visibility allow-discrete</code>.
+                    <br />
+                    <br />
+                    This height shrinks to the minimum paragraph height when
+                    <code>content-visibility: hidden</code>.
+                </p>
+            </div>
+
+            <div class="inner-container">
+                <button id="transition-visibility-btn">transition + visibility + opacity</button>
+                <p id="transition-visibility-para">
+                    <code>visibility: visible &harr; visibility: hidden</code>
+                    <br />
+                    <br />
+                    This height does not change.
+                </p>
+            </div>
+        </div>
+
+        <script src="/src/main.js" type="module"></script>
+    </body>
+</html>
