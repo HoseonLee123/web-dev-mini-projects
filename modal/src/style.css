@@ -1,12 +1,13 @@
-:root {
-    --gap: 20px;
-    --border-radius: 10px;
-}
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --gap: 20px;
+    --border-radius: 10px;
+    --width-size: 500px;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
 }
 
 .show-modal {
+    border: none;
     border-radius: var(--border-radius);
     background-color: lightsalmon;
     padding: var(--gap);
@@ -33,23 +35,26 @@ body {
 
 .modal-container {
     display: none;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: calc(var(--width-size) * -1);
     bottom: 0;
     opacity: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: var(--border-radius);
     background-color: white;
-    width: 500px;
-    transition: all 0.3s ease-in-out;
+    width: var(--width-size);
+    height: 400px;
 }
 
-.modal-container.display {
+.modal-container.toggle {
     display: block;
-}
-
-.modal-container.opacity {
+    right: 0;
     opacity: 1;
+
+    @starting-style {
+        right: calc(var(--width-size) * -1);
+        opacity: 0;
+    }
 }
 
 .modal-container .top-content {
@@ -64,6 +69,8 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
+    border: none;
+    background-color: transparent;
     font-weight: bold;
     font-size: 30px;
     cursor: pointer;
