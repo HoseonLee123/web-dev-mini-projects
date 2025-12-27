@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: dimgray;
+    height: 100vh;
+}
+
+.scroller {
+    flex: 1;
+    position: relative;
+    background-color: beige;
+    height: 500px;
+    overflow-y: scroll;
+    scroll-timeline-name: --scroller;
+}
+
+header {
+    margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
+}
+
+p {
+    background-color: #b5b520;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.item-container {
+    height: 1500px;
+}
+
+.item {
+    position: absolute;
+    top: 100%;
+    left: calc(50% - var(--size) / 2);
+    border-left: 5px solid black;
+    border-top-left-radius: 20px;
+    width: var(--size);
+    height: var(--size);
+    animation: 1ms linear action;
+    --size: 100px;
+}
+
+.item-1 {
+    background-color: red;
+    animation-timeline: --scroller;
+}
+
+.item-2 {
+    background-color: tomato;
+    animation-timeline: scroll(nearest y);
+}
+
+.item-3 {
+    background-color: yellowgreen;
+    view-timeline: --scroller;
+    animation-timeline: --scroller;
+}
+
+.item-4 {
+    background-color: mediumpurple;
+    animation-timeline: view();
+}
+
+@keyframes action {
+    to {
+        transform: rotate(360deg);
+    }
+}
