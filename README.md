@@ -1,1 +1,1 @@
-These are web development projects.
+These are web vanilla projects.
